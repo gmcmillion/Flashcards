@@ -41,5 +41,10 @@ class ViewController: UIViewController {
     
     // We set the flashcardsController property to self
     creationController.flashcardsController = self
+    
+    if(segue.identifier == "EditSegue") {
+      creationController.initialQuestion = frontLabel.text
+      creationController.initialAnswer = backLabel.text
+    }
   }
 }
