@@ -31,11 +31,24 @@ class CreationViewController: UIViewController {
     // Get the text in the answer text field
     let answerText = answerTextField.text
     
-    // Call the function to update the flashcard
-    flashcardsController.updateFlashCard(question: questionText!, answer: answerText!)
-  
-    // Dismiss
-    dismiss(animated: true)
+    // If question or answer are nil
+    if(questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty) {
+      // Create alert message
+      let alert = UIAlertController(title: "Missing text", message: "You need to enter both a question and an answer", preferredStyle: .alert)
+      
+      // Add ok button for dismissing action
+      let okAction = UIAlertAction(title: "Ok", style: .default)
+      alert.addAction(okAction)
+      
+      // Show error message
+      present(alert, animated: true)
+    } else {
+      // Call the function to update the flashcard
+      flashcardsController.updateFlashCard(question: questionText!, answer: answerText!)
+    
+      // Dismiss
+      dismiss(animated: true)
+    }
   }
   /*
     // MARK: - Navigation
