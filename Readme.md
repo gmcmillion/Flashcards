@@ -1,5 +1,3 @@
-📝 `NOTE` Paste this template at the top of your existing `README.md` file from the last lab.
-
 ## Lab 4
 
 ### App Description
